@@ -61,16 +61,21 @@ class Employee {
   }
 
   getAnnularSalary() {
-    return this.salaryEmp * 365;
+    // return this.salaryEmp * this.workingHoursEmp * 365;  // if salary/hour activate this
+    return this.salaryEmp * 12; // if salary/month activate this
   }
 
   raiseSalary(percent) {
+    // assuming the percent is given as 20% not instantly 0.20
     this.salaryEmp = this.salaryEmp * (1 + percent / 100);
     return this.salaryEmp;
   }
 }
 
 const employee1 = new Employee(01, "Garabed", "Baghsarian", "junior", 540, 8);
+
 console.log(employee1.getFullName());
+console.log(employee1.salary);
 console.log(employee1.raiseSalary(2));
 console.log(employee1.salary);
+console.log(employee1.getAnnularSalary());
