@@ -1,8 +1,6 @@
 Function.prototype.customCall = function (thisArg, ...args) {
     const key = Math.floor(Math.random() * Date.now());
-
     thisArg[key] = this;
-
     const result = thisArg[key](...args);
     delete thisArg;
     return result;  
